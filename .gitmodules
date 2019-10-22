@@ -1,0 +1,6 @@
+[submodule "imglib2-labkit"]
+	path = imglib2-labkit
+	url = https://github.com/kozusznik/imglib2-labkit.git
+[submodule "imglib2-labkit-cluster"]
+	path = imglib2-labkit-cluster
+	url = https://github.com/kozusznik/imglib2-labkit-cluster.git
