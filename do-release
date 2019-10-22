@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#this script build required libraries and copies into Fiji installation directory
+FIJI_APP=ImageJ-linux64
+UPDATE_SITE=Imglib2-labkit-cluster
+mvn clean install -Dmaven.test.skip=true
+
+DIR=`readlink -f $1`
+OLD_DIR=`readlink -f .`
+cd $DIR/jars
+rm -f imglib2-labkit-*.jar
+cd $OLD_DIR
+cp target/module-assembly-bin/lib/*.jar $DIR/jars/
+$DIR/$FIJI_APP --update upload-complete-site $UPDATE_SITE
